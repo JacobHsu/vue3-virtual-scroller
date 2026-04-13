@@ -3,9 +3,10 @@ import { faker } from '@faker-js/faker'
 let uid = 0
 
 function generateItem() {
+  const name = faker.name.fullName()
   return {
-    name: faker.name.fullName(),
-    avatar: faker.internet.avatar(),
+    name,
+    avatar: `https://i.pravatar.cc/50?u=${encodeURIComponent(name)}`,
   }
 }
 
@@ -63,8 +64,9 @@ export function addItem(list) {
 }
 
 export function generateMessage() {
+  const name = faker.name.fullName()
   return {
-    avatar: faker.internet.avatar(),
+    avatar: `https://i.pravatar.cc/50?u=${encodeURIComponent(name)}`,
     message: faker.lorem.text(),
   }
 }

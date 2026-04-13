@@ -91,16 +91,16 @@ const zhSidebar = {
       text: '展示範例',
       items: [
         { text: '總覽', link: '/zh/demos/' },
-        { text: 'RecycleScroller', link: '/demos/recycle-scroller' },
-        { text: 'DynamicScroller', link: '/demos/dynamic-scroller' },
-        { text: 'WindowScroller', link: '/demos/window-scroller' },
-        { text: '聊天串流', link: '/demos/chat' },
-        { text: 'Shift（預置錨定）', link: '/demos/shift' },
-        { text: '簡單清單', link: '/demos/simple-list' },
-        { text: 'Headless 表格', link: '/demos/headless-table' },
-        { text: '水平捲動', link: '/demos/horizontal' },
-        { text: '格線', link: '/demos/grid' },
-        { text: '測試聊天', link: '/demos/test-chat' },
+        { text: 'RecycleScroller', link: '/zh/demos/recycle-scroller' },
+        { text: 'DynamicScroller', link: '/zh/demos/dynamic-scroller' },
+        { text: 'WindowScroller', link: '/zh/demos/window-scroller' },
+        { text: '聊天串流', link: '/zh/demos/chat' },
+        { text: 'Shift（預置錨定）', link: '/zh/demos/shift' },
+        { text: '簡單清單', link: '/zh/demos/simple-list' },
+        { text: 'Headless 表格', link: '/zh/demos/headless-table' },
+        { text: '水平捲動', link: '/zh/demos/horizontal' },
+        { text: '格線', link: '/zh/demos/grid' },
+        { text: '測試聊天', link: '/zh/demos/test-chat' },
       ],
     },
   ],
@@ -121,7 +121,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: '指南', link: '/zh/guide/' },
-          { text: '展示範例', link: '/demos/' },
+          { text: '展示範例', link: '/zh/demos/' },
           {
             text: '連結',
             items: [

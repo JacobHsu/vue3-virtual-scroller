@@ -5,5 +5,6 @@ export default antfu({
   ignores: [
     'playwright-report/**',
     'test-results/**',
+    'notes/**',
   ],
 })

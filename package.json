@@ -1,0 +1,34 @@
+{
+  "name": "vue-virtual-scroller-monorepo",
+  "version": "2.0.1",
+  "private": true,
+  "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "pnpm run -r --filter=!demo build",
+    "release": "pnpm run lint && pnpm run typecheck && pnpm run build && sheep release -b main --force",
+    "lint": "eslint --cache",
+    "test": "pnpm run lint && pnpm run typecheck && pnpm run test:unit && pnpm run test:e2e",
+    "typecheck": "pnpm --filter vue-virtual-scroller typecheck",
+    "test:unit": "pnpm run -r --filter vue-virtual-scroller test",
+    "test:e2e": "playwright test",
+    "test:ci": "pnpm build && pnpm docs:build && pnpm --filter vue-virtual-scroller exec npm pack --dry-run",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "@akryum/sheep": "^0.5.2",
+    "@antfu/eslint-config": "^7.7.0",
+    "@playwright/test": "1.58.2",
+    "@types/node": "^25.5.0",
+    "eslint": "^10.0.2",
+    "playwright": "1.58.2",
+    "typescript": "^5.3.3",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.0",
+    "vue-tsc": "^3.2.6"
+  }
+}

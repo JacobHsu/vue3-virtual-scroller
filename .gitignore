@@ -1,0 +1,10 @@
+node_modules/
+.temp/
+.cache/
+dist/
+.eslintcache
+docs/.vitepress/cache
+docs/.vitepress/dist
+playwright-report/
+test-results/
+tests-results/

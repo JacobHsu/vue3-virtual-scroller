@@ -33,5 +33,8 @@ jobs:
           PLAYWRIGHT_ENABLE_WEBKIT: '1'
         run: pnpm test:e2e
 
+      - name: Copy CHANGELOG into docs
+        run: cp CHANGELOG.md docs/CHANGELOG.md
+
       - name: Validate release build
         run: pnpm test:ci

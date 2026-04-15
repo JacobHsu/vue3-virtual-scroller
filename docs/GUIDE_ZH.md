@@ -12,7 +12,7 @@
 4. [環境準備與啟動](#4-環境準備與啟動)
 5. [套件 API 一覽](#5-套件-api-一覽)
 6. [元件詳解](#6-元件詳解)
-7. [Headless Composables（無介面 API）](#7-headless-composablesapi)
+7. [Headless Composables（無介面 API）](#7-headless-composables無介面-api)
 8. [實作範例](#8-實作範例)
 9. [測試](#9-測試)
 10. [常見問題](#10-常見問題)
@@ -152,7 +152,7 @@ npm install vue-virtual-scroller
 ```js
 // main.js
 import VueVirtualScroller from 'vue-virtual-scroller'
-import 'vue-virtual-scroller/index.css'  // ⚠️ 必須引入 CSS
+import 'vue-virtual-scroller/index.css' // ⚠️ 必須引入 CSS
 
 app.use(VueVirtualScroller)
 ```
@@ -182,10 +182,12 @@ app.component('RecycleScroller', RecycleScroller)
     class="scroller"
     :items="list"
     :item-size="48"
-    key-field="id"
     v-slot="{ item }"
+    key-field="id"
   >
-    <div class="user-item">{{ item.name }}</div>
+    <div class="user-item">
+      {{ item.name }}
+    </div>
   </RecycleScroller>
 </template>
 
@@ -233,7 +235,9 @@ app.component('RecycleScroller', RecycleScroller)
         :size-dependencies="[item.content]"
         :data-index="index"
       >
-        <div class="message">{{ item.content }}</div>
+        <div class="message">
+          {{ item.content }}
+        </div>
       </DynamicScrollerItem>
     </template>
   </DynamicScroller>
@@ -253,8 +257,8 @@ app.component('RecycleScroller', RecycleScroller)
   <WindowScroller
     :items="posts"
     :item-size="200"
-    key-field="id"
     v-slot="{ item }"
+    key-field="id"
   >
     <PostCard :post="item" />
   </WindowScroller>
@@ -293,14 +297,12 @@ const { start, end } = scrollerRef.value.getScroll()
 當你需要 **自訂 HTML 結構**（例如 `<table>` 虛擬捲動），可以使用 Composable API，只獲取虛擬化邏輯，不綁定元件模板。
 
 ```ts
-// 固定高度
-import { useRecycleScroller } from 'vue-virtual-scroller'
-
-// 動態高度
-import { useDynamicScroller } from 'vue-virtual-scroller'
-
-// 頁面捲動
-import { useWindowScroller } from 'vue-virtual-scroller'
+// 依需求選擇引入：固定高度 / 動態高度 / 頁面捲動
+import {
+  useRecycleScroller, // 固定高度
+  useDynamicScroller, // 動態高度
+  useWindowScroller,  // 頁面捲動
+} from 'vue-virtual-scroller'
 ```
 
 **TypeScript 泛型支援**
@@ -348,8 +350,8 @@ const users = ref<User[]>(
     class="user-list"
     :items="users"
     :item-size="64"
-    key-field="id"
     v-slot="{ item }"
+    key-field="id"
   >
     <div class="user-row">
       <strong>{{ item.name }}</strong>

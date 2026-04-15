@@ -6,5 +6,6 @@ export default antfu({
     'playwright-report/**',
     'test-results/**',
     'notes/**',
+    'docs/GUIDE_ZH.md',
   ],
 })

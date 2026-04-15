@@ -181,8 +181,8 @@ app.component('RecycleScroller', RecycleScroller)
   <RecycleScroller
     class="scroller"
     :items="list"
-    :item-size="48"
     v-slot="{ item }"
+    :item-size="48"
     key-field="id"
   >
     <div class="user-item">
@@ -256,8 +256,8 @@ app.component('RecycleScroller', RecycleScroller)
 <template>
   <WindowScroller
     :items="posts"
-    :item-size="200"
     v-slot="{ item }"
+    :item-size="200"
     key-field="id"
   >
     <PostCard :post="item" />
@@ -299,9 +299,9 @@ const { start, end } = scrollerRef.value.getScroll()
 ```ts
 // 依需求選擇引入：固定高度 / 動態高度 / 頁面捲動
 import {
-  useRecycleScroller, // 固定高度
   useDynamicScroller, // 動態高度
-  useWindowScroller,  // 頁面捲動
+  useRecycleScroller, // 固定高度
+  useWindowScroller, // 頁面捲動
 } from 'vue-virtual-scroller'
 ```
 
@@ -349,8 +349,8 @@ const users = ref<User[]>(
   <RecycleScroller
     class="user-list"
     :items="users"
-    :item-size="64"
     v-slot="{ item }"
+    :item-size="64"
     key-field="id"
   >
     <div class="user-row">
